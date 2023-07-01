@@ -52,7 +52,7 @@ public final class StateOutputHelper {
             stateFile.setLength(0); // clear existing file contents
             stateFile.seek(0); // move pointer back to start of file
             stateFile.write(string.getBytes(StandardCharsets.UTF_8));
-            WorldPreview.log(Level.INFO, "WorldPreview State: " + string);
+            WorldPreview.LOGGER.info("WorldPreview State: {} [{}]", string, System.currentTimeMillis());
         } catch (IOException ignored) {
             WorldPreview.log(Level.ERROR, "Failed to write state output!");
         }
